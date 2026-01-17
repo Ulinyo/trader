@@ -2,34 +2,27 @@ package domain;
 
 import enums.TypeGoods;
 
-import java.util.Random;
+import java.util.Objects;
 
-public class Goods {
+public class Good {
     private int weight;
     private TypeGoods type;
-    private String qualityGoods;
+    private String quality;
     private double price;
 
-    public Goods() {
-        Random r = new Random();
-        this.weight = r.nextInt(20) + 1;
-        
-    }
-
-    public double getPrice() {
-        return price;
-    }
-
-    public void setPrice(double price) {
+    public Good(int weight, TypeGoods type, String quality, double price) {
+        this.weight = weight;
+        this.type = Objects.requireNonNull(type, "У данного товара нет типа");
+        this.quality = quality;
         this.price = price;
     }
 
-    public String getQualityGoods() {
-        return qualityGoods;
+    public int getWeight() {
+        return weight;
     }
 
-    public void setQualityGoods(String qualityGoods) {
-        this.qualityGoods = qualityGoods;
+    public void setWeight(int weight) {
+        this.weight = weight;
     }
 
     public TypeGoods getType() {
@@ -40,11 +33,19 @@ public class Goods {
         this.type = type;
     }
 
-    public int getWeight() {
-        return weight;
+    public String getQuality() {
+        return quality;
     }
 
-    public void setWeight(int weight) {
-        this.weight = weight;
+    public void setQuality(String quality) {
+        this.quality = quality;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
     }
 }
