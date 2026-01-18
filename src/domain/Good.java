@@ -1,5 +1,6 @@
 package domain;
 
+import enums.QualityGoods;
 import enums.TypeGoods;
 
 import java.util.Objects;
@@ -7,13 +8,13 @@ import java.util.Objects;
 public class Good {
     private int weight;
     private TypeGoods type;
-    private String quality;
+    private QualityGoods quality;
     private double price;
 
-    public Good(int weight, TypeGoods type, String quality, double price) {
+    public Good(int weight, TypeGoods type, double price) {
         this.weight = weight;
         this.type = Objects.requireNonNull(type, "У данного товара нет типа");
-        this.quality = quality;
+        this.quality = QualityGoods.NORMAL;
         this.price = price;
     }
 
@@ -33,11 +34,11 @@ public class Good {
         this.type = type;
     }
 
-    public String getQuality() {
+    public QualityGoods getQuality() {
         return quality;
     }
 
-    public void setQuality(String quality) {
+    public void setQuality(QualityGoods quality) {
         this.quality = quality;
     }
 
