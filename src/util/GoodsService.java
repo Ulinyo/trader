@@ -24,6 +24,6 @@ public class GoodsService {
     }
 
     public Good takeGood() {
-        return goods.get(new Random().nextInt(goods.size()) + 1);
+        return goods.get(new Random().nextInt(goods.size()));
     }
 }

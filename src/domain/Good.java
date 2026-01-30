@@ -49,4 +49,9 @@ public class Good {
     public void setPrice(double price) {
         this.price = price;
     }
+
+    @Override
+    public String toString() {
+        return type.name() + " " + price + " weight = " + weight;
+    }
 }
